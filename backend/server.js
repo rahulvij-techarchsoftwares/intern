@@ -9,7 +9,11 @@ const faqRoutes = require('./routes/faqRoutes');
 const app = express();
 const PORT = process.env.PORT;
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://51.20.251.151:3001', 
+  credentials: true, 
+}));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api", assistanceRoutes);
 app.use("/api", faqRoutes);
