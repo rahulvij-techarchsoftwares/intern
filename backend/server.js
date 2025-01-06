@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cors({
-  origin: 'http://51.20.251.151:3001', 
+  origin: 'http://16.171.159.57:3001', 
   credentials: true, 
 }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -29,7 +29,7 @@ mongoose
 
 // Use public IP of EC2 for binding
 const server = app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on http://${'51.20.251.151'}:${PORT}`);
+  console.log(`Server running on http://${'16.171.159.57'}:${PORT}`);
 });
 
 module.exports = server; // Export the server instance for use in deployment
